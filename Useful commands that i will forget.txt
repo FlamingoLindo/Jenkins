@@ -1,9 +1,18 @@
+docker build -t myjenkins-blueocean:2.414.2 .
+
+docker network create Jenkins
+
+docker buildx build .
+
+---
+
 docker exec -it -u root 1d46a9eb85c6 bash
 
 source venv/bin/activate
 cd /var/jenkins_home/workspace/natour
 source venv/bin/activate 
 
+---
 
 apt-get update
 apt-get install -y pkg-config python3-dev default-libmysqlclient-dev build-essential
